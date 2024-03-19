@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,500;1,5..1200,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Playfair', serif;
+}
+body {
+    background-color: #bbc6fa;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    width: 800px;
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 10px 20px  0px rgba(0, 0, 0, 0, 0.15);
+    border: 1.5px solid black;
+}
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.container h1::after {
+    content: "";
+    width: 75px;
+    height: 3px;
+    border-radius: 1rem;
+    background-color: rgba(23, 124, 229);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container blockquote {
+    font-size: 1.6rem;
+    font-weight: 550;
+    margin-top: 1.5rem;
+}
+.container blockquote::before, .container blockquote::after {
+    content: '"';
+}
+.container span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    /* background-color: red; */
+    margin-top: 2rem;
+    float: right;
+    position: relative;
+}
+.container span::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: rgba(23, 124, 229);
+    position: absolute;
+    top: 50%;
+    left: -30%;
+}
+.btn-image {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    font-weight: bold;
+}
+.btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 6rem;
+
+}
+.btn {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1rem 1rem; */
+    margin: 10px;
+    border-radius: 5rem;
+    border: none;
+    background-color: white;
+    color: black;
+    border: 2.5px solid rgba(23, 124, 229);
+    font-size: 1.2rem;
+    /* font-weight: 600; */
+
+}
+.btn:hover {
+    background-color: rgba(23, 124, 229);
+    /* border: 1.5px solid black; */
+    color: white;
+    /* border: none; */
+    font-weight: 600;
+    cursor: pointer;
+}
+

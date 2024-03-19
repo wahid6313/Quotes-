@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Generator </title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quote of the day</h1>
+        <blockquote class="quote">loading...</blockquote>
+        <span class="author">loading...</span>
+
+        <div class="btn-box">
+            <button class="btn  newquote--btn">New Quote</button>
+            <button class="btn  newtweet--btn"><img src="twitter.png" class="btn-image" alt="">Tweet</button>
+            
+        </div>
+    </div>
+ 
+    <script>
+      
+    const api_url = "https://api.quotable.io/random";
+
+    const quote = document.querySelector('.quote');
+    const author = document.querySelector('.author');
+    let newBtn = document.querySelector(".newquote--btn");
+
+    console.log(api_url);
+
+    
+    async function quotes(url) {
+        const response = await fetch(url);
+        var data = await response.json();
+        console.log(data);
+
+        quote.innerHTML = data.content;
+        author.textContent = data.author;
+    }
+    quotes(api_url);
+
+    newBtn.addEventListener("click" , function(){
+        quotes(api_url);
+    });
+
+
+    document.querySelector('.newtweet--btn').addEventListener('click' , function() {
+        window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "   " + "-- by " + author.textContent, "tweet window" , "width =600, height= 300");
+    });
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function quotes(data){
+    //     fetch(data).then(res=>{
+    //     return res.json()
+    // }).then(output=>{
+    //     quote.textContent = output.content;
+    //     author.textContent = output.author;
+    // })
+    // }
+    
+    // quotes(api_url);
+
+    </script>
+
+</body>
+</html>
